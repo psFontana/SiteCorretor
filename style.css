@@ -42,3 +42,49 @@ body {
 .btn {
   min-width: 140px;
 }
+/* style.css */
+
+/* … seu CSS existente … */
+
+/* estilo dos depoimentos */
+.testimonial-item {
+  border-left: 4px solid rgba(255, 255, 255, 0.8);
+  padding-left: 1rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  body {
+    background: linear-gradient(to right, #0055a5, #003f7f);
+  }
+
+  .d-flex.w-100.vh-100.overflow-hidden {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .w-60,
+  .w-40 {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .carousel.slide {
+    width: 100vw;
+    height: 300px;
+  }
+
+  .carousel-item img {
+    height: 300px;
+  }
+
+  .bg-azul {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

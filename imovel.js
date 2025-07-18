@@ -72,7 +72,7 @@ fetch("imoveis.json")
       <p><strong>Preço:</strong> ${formatarPreco(imovel.preco)}</p>
       <p><strong>Localização:</strong> ${imovel.cidade} - ${imovel.bairro}</p>
       <p><strong>Descrição:</strong> ${imovel.descricao}</p>
-      <a href="https://wa.me/55SEUNUMERO?text=${encodeURIComponent(
+      <a href="https://wa.me/5546999379268?text=${encodeURIComponent(
         "Olá, tenho interesse no imóvel " + imovel.titulo
       )}"
           target="_blank"
