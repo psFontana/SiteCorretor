@@ -1,0 +1,44 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+/* Lado direito (texto) */
+.bg-azul {
+  background: linear-gradient(to right, #0055a5, #003f7f);
+}
+
+/* Carrossel */
+.carousel.slide {
+  width: 70vw;
+  height: 100vh;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Botões */
+.btn {
+  min-width: 140px;
+}

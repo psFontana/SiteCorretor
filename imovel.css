@@ -1,0 +1,23 @@
+/* imovel.css — adicione no topo */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 70px; /* mantém o espaçamento pra navbar fixa */
+}
+
+/* garante que a <main> cresça e empurre o footer pra baixo */
+main.container {
+  flex: 1;
+}
+
+/* opcional: reforça que o footer não encolha */
+footer {
+  flex-shrink: 0;
+}
