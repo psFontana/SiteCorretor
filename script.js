@@ -14,6 +14,30 @@ fetch("imoveis.json")
       carouselContent.innerHTML += item;
     });
   });
+// if (window.innerWidth > 768) {
+//   new fullpage("#fullpage", {
+//     scrollBar: true,
+//     navigation: true,
+//     anchors: ["home", "sobre", "contato"],
+//     menu: false,
+//     afterLoad: function (origin, destination, direction) {
+//       if (destination.index === 0) {
+//         $(".header-links i").css("color", "white");
+//       } else {
+//         $(".header-links i").css("color", "black");
+//       }
+//     },
+//   });
+// } else {
+//   console.log("FullPage não ativado (mobile)");
+// }
+
+if (window.innerWidth > 768) {
+  let essabosta = document.createElement("script");
+  essabosta.src =
+    "https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.14/fullpage.min.js";
+  document.head.appendChild(essabosta);
+}
 
 $(document).ready(function () {
   // 1) typing animation

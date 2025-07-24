@@ -17,42 +17,32 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <script defer src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.14/fullpage.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <script defer src="script.js"></script>
   <link rel="stylesheet" href="style.css">
+
+
 </head>
 
 <body class="m-0 p-0">
 
-  <!-- <nav class="nav-screen">
-    <i class="fa fa-times menu-close"></i>
-    <ul class="nav-links list-unstyled">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav> -->
-
   <div id="fullpage">
     <section class="snap-section section d-flex w-100 vh-100 overflow-hidden" data-anchor="home">
       <!-- Carrossel -->
-      <div class="w-60 h-100">
-        <div id="carouselExample" class="carousel slide h-100" data-bs-ride="carousel">
-          <div class="carousel-inner h-100" id="carousel-content"></div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-            <span class="visually-hidden">Próximo</span>
-          </button>
-        </div>
+      <div id="carouselExample" class="carousel slide h-100" data-bs-ride="carousel">
+        <div class="carousel-inner h-100" id="carousel-content"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
       </div>
-
       <!-- Texto e Botões -->
-      <div class="w-40 d-flex flex-column justify-content-evenly align-items-center text-white p-4 text-center bg-azul">
+      <div id="teste"
+        class="w-40 d-flex flex-column justify-content-evenly align-items-center text-white p-4 text-center bg-azul">
         <div>
           <h1>O lar dos seus sonhos está aqui</h1>
           <p>Imóveis selecionados com confiança e cuidado</p>
@@ -79,7 +69,7 @@
 
     <!-- Seções de Conteúdo -->
     <section
-      class="snap-section section vh-100 bg-light text-dark d-flex flex-column justify-content-center align-items-center"
+      class="snap-section section p-4 vh-100 bg-light text-dark d-flex flex-column justify-content-center align-items-center"
       data-anchor="sobre">
       <h2>Sobre Mim</h2>
       <p>
@@ -97,7 +87,7 @@
     </section>
 
     <section
-      class="snap-section section vh-100 bg-white text-dark d-flex flex-column justify-content-center align-items-center text-center px-3"
+      class="snap-section p-4 section vh-100 bg-white text-dark d-flex flex-column justify-content-center align-items-center text-center px-3"
       data-anchor="contato">
 
       <h2 class="mb-3">Não encontrou o que procurava?</h2>

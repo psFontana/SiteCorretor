@@ -67,26 +67,45 @@ fp-watermark {
 @media (max-width: 768px) {
   body {
     background: linear-gradient(to right, #0055a5, #003f7f);
+    overflow-y: auto;
+  }
+
+  section[data-anchor="home"] {
+    height: 100vh !important;
+    justify-content: space-evenly;
+
+    #teste {
+      flex-grow: 1;
+    }
   }
 
   .d-flex.w-100.vh-100.overflow-hidden {
     flex-direction: column;
-    height: auto;
+    height: 100vh;
   }
 
-  .w-60,
-  .w-40 {
+  .w-60 {
     width: 100% !important;
+    height: 300px !important;
+  }
+
+  .h-100 {
+    height: auto !important;
+  }
+  .vh-100 {
     height: auto !important;
   }
 
   .carousel.slide {
-    width: 100vw;
-    height: 300px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100vw !important;
+    height: 300px !important;
   }
 
   .carousel-item img {
-    height: 300px;
+    height: 300px !important;
+    width: 100vw !important;
   }
 
   .bg-azul {
