@@ -90,7 +90,7 @@ fp-watermark {
   }
 
   section[data-anchor="home"] {
-    height: 100vh !important;
+    min-height: 100vh !important;
     justify-content: space-evenly;
 
     #teste {
