@@ -19,25 +19,36 @@ body {
 
 /* Carrossel */
 .carousel.slide {
-  width: 70vw;
-  height: 100vh;
+  width: 70vw !important;
+  height: 100vh !important;
 }
 
 .carousel-inner {
-  height: 100%;
+  height: 100% !important;
 }
 
 .carousel-item {
-  height: 100%;
+  height: 100% !important;
 }
 
 .carousel-item img {
-  height: 100%;
-  width: 100%;
+  height: 100vh !important;
+  width: 70vw;
   object-fit: cover;
   object-position: center;
 }
 
+.fp-overflow {
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+fp-watermark {
+  display: none !important;
+}
 /* Botões */
 .btn {
   min-width: 140px;

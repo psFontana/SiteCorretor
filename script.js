@@ -14,3 +14,103 @@ fetch("imoveis.json")
       carouselContent.innerHTML += item;
     });
   });
+
+$(document).ready(function () {
+  // 1) typing animation
+  (function ($) {
+    $.fn.writeText = function (content) {
+      var contentArray = content.split(""),
+        current = 0,
+        elem = this;
+      setInterval(function () {
+        if (current < contentArray.length) {
+          elem.text(elem.text() + contentArray[current++]);
+        }
+      }, 80);
+    };
+  })(jQuery);
+
+  $("#holder").writeText("WEB DESIGNER + FRONT-END DEVELOPER");
+
+  // 2) wow.js
+  new WOW().init();
+
+  // 3) nav-screen toggle
+  $(".menu-toggle").click(function () {
+    $(".nav-screen").css("right", "0");
+    $("body").css("right", "285px");
+  });
+
+  $(".menu-close, .nav-links a").click(function () {
+    $(".nav-screen").css("right", "-285px");
+    $("body").css("right", "0");
+  });
+
+  // 4) fullPage.js
+  new fullpage("#fullpage", {
+    scrollBar: true,
+    navigation: true,
+    anchors: ["home", "sobre", "contato"],
+    menu: false,
+    afterLoad: function (origin, destination, direction) {
+      // muda estilo de header-links conforme seção
+      if (destination.index === 0) {
+        $(".header-links i").css("color", "white");
+      } else {
+        $(".header-links i").css("color", "black");
+      }
+    },
+  });
+
+  // 5) smooth anchors (caso use links normais)
+  $('a[href*="#"]')
+    .not('[href="#"]')
+    .click(function () {
+      if (
+        location.pathname.replace(/^\//, "") ===
+          this.pathname.replace(/^\//, "") &&
+        location.hostname === this.hostname
+      ) {
+        var target = $(this.hash);
+        target = target.length
+          ? target
+          : $("[name=" + this.hash.slice(1) + "]");
+        if (target.length) {
+          $("html, body").animate({ scrollTop: target.offset().top }, 700);
+          return false;
+        }
+      }
+    });
+
+  // 6) AJAX form
+  var form = $("#ajax-contact");
+  var formMessages = $("#form-messages");
+
+  $(form).submit(function (e) {
+    e.preventDefault();
+    var formData = $(form).serialize();
+
+    $.ajax({
+      type: "POST",
+      url: $(form).attr("action"),
+      data: formData,
+    })
+      .done(function (response) {
+        formMessages.removeClass("error").addClass("success");
+        formMessages.text(response);
+        $(form).find("input, textarea").val("");
+      })
+      .fail(function (data) {
+        formMessages.removeClass("success").addClass("error");
+        formMessages.text(data.responseText || "Erro ao enviar a mensagem.");
+      });
+  });
+});
+
+// Remover watermark do fullPage.js
+// setTimeout(() => {
+//   const watermark = document.querySelector(".fp-watermark");
+//   if (watermark) {
+//     watermark.remove();
+//   }
+// }, 100);
