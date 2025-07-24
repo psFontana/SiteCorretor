@@ -9,13 +9,17 @@ function handleFullPageLoad() {
         "https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.14/fullpage.min.js";
       fullpageScript.onload = function () {
         fullpageInstance = new fullpage("#fullpage", {
-          licenseKey: "YOUR_LICENSE_KEY_HERE",
-          scrollBar: true,
+          anchors: ["home", "about-us", "contact", "footer"],
           navigation: true,
-          anchors: ["home", "sobre", "contato"],
-          menu: false,
-          loopTop: true,
-          loopBottom: true,
+          navigationTooltips: ["Home", "About Us", "Contact", "Footer"],
+          scrollingSpeed: "486",
+          fitToSectionDelay: "600",
+          loopHorizontal: false,
+          continuousVertical: true,
+          scrollOverflow: false,
+          recordHistory: false,
+          controlArrows: false,
+          lazyLoading: false,
           afterLoad: function (origin, destination, direction) {
             if (destination.index === 0) {
               $(".header-links i").css("color", "white");
