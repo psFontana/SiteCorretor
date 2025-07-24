@@ -14,6 +14,8 @@ function handleFullPageLoad() {
           navigation: true,
           anchors: ["home", "sobre", "contato"],
           menu: false,
+          loopTop: true,
+          loopBottom: true,
           afterLoad: function (origin, destination, direction) {
             if (destination.index === 0) {
               $(".header-links i").css("color", "white");

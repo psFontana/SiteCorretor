@@ -1,4 +1,3 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -12,12 +11,22 @@ body {
   overflow: hidden;
 }
 
-/* Lado direito (texto) */
 .bg-azul {
-  background: linear-gradient(to right, #0055a5, #003f7f);
+  background: linear-gradient(128deg, #0285e2, #3f61ff);
 }
 
-/* Carrossel */
+.bg-laranja {
+  background: linear-gradient(128deg, #ff9a3f, #ff4b40);
+}
+
+.bg-roxo {
+  background: linear-gradient(128deg, #6a1b9a, #8e24aa);
+}
+
+.bg-verde {
+  background: linear-gradient(128deg, #00bfa5, #00c853);
+}
+
 .carousel.slide {
   width: 70vw !important;
   height: 100vh !important;
@@ -49,19 +58,29 @@ body {
 fp-watermark {
   display: none !important;
 }
-/* Botões */
+
 .btn {
   min-width: 140px;
 }
-/* style.css */
 
-/* … seu CSS existente … */
-
-/* estilo dos depoimentos */
 .testimonial-item {
   border-left: 4px solid rgba(255, 255, 255, 0.8);
   padding-left: 1rem;
   font-style: italic;
+}
+
+.btn-grow-hover {
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-grow-hover:hover {
+  transform: scale(1.1);
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-grow-hover.move-up:hover {
+  transform: scale(1.05) translateY(-5px);
 }
 
 @media (max-width: 768px) {
