@@ -105,9 +105,9 @@ body {
 
   section[data-anchor="home"] {
     min-height: 100vh !important;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
-    #teste {
+    #home-texto {
       flex-grow: 1;
     }
   }
@@ -132,7 +132,8 @@ body {
       width: 100vw !important;
       padding: 1rem;
       text-align: center;
-      margin: auto;
+      flex-grow: 1;
+      padding: 0 1rem !important;
     }
   }
 
