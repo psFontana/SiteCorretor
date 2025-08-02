@@ -17,8 +17,8 @@ function handleFullPageLoad() {
           loopHorizontal: false,
           continuousVertical: true,
           scrollOverflow: false,
-          recordHistory: false,
-          controlArrows: false,
+          recordHistory: true,
+          controlArrows: true,
           lazyLoading: false,
 
           onLeave(origin, destination) {
@@ -45,10 +45,6 @@ function handleFullPageLoad() {
         });
 
         // Reanexa os eventos do menu
-        document.querySelectorAll(".nav-links a").forEach((link) => {
-          link.removeEventListener("click", navLinkHandler);
-          link.addEventListener("click", navLinkHandler);
-        });
       };
       document.head.appendChild(script);
     }
