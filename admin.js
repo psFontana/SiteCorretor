@@ -19,12 +19,12 @@ window.onload = async () => {
   }
 
   const user = await auth0.getUser();
-  const emailAutorizado = "paulosergiofontana11@gmail.com";
 
-  if (user.email !== emailAutorizado) {
-    alert("Acesso não autorizado!");
-    window.location.href = "/index.html";
-    return;
+  const roles = user["https://sergiocorretor.app/claims/roles"] || [];
+
+  if (!roles.includes("admin")) {
+    alert("Você não tem permissão para acessar esta página.");
+    window.location.href = "/";
   }
 
   // Carregar imóveis
