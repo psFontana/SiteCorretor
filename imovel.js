@@ -13,7 +13,7 @@ if (!detalhesEl || !loadingEl) {
   console.error("Não encontrou #detalhes-imovel ou #loading no DOM");
 }
 
-fetch("data/casas.json")
+fetch("imoveis.json")
   .then((res) => {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();
