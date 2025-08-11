@@ -4,62 +4,74 @@
     "titulo": "Casa no Centro",
     "cidade": "Francisco Beltrão",
     "bairro": "Centro",
-    "preco": "450000",
+    "preco": 450000,
     "descricao": "Casa com 3 quartos, garagem, sala ampla e área de lazer.",
-    "imagem": "https://imgs1.cdn-imobibrasil.com.br/imagens/imoveis/202502101649507690.jpeg"
+    "imagens": ["casa_centro_1.jpeg", "casa_centro_2.png"],
+    "quartos": 3,
+    "banheiros": 2,
+    "garagem": 2
   },
   {
     "id": 2,
     "titulo": "Apartamento Jardim Europa",
     "cidade": "Francisco Beltrão",
     "bairro": "Jardim Europa",
-    "preco": "280000",
+    "preco": 280000,
     "descricao": "2 quartos, sacada com churrasqueira, ótima vista e segurança.",
-    "imagem": "https://si9dados3.com.br/fotos/jeanimoveis/17273583201301727358319883WhatsAppImage2024-09-04at11.09.09.jpeg"
+    "imagens": [
+      "apartamento_jardim_europa_1.png",
+      "apartamento_jardim_europa_2.webp"
+    ],
+    "quartos": 2,
+    "banheiros": 1,
+    "garagem": 0
   },
   {
     "id": 3,
     "titulo": "Chácara Recreativa",
     "cidade": "Marmeleiro",
     "bairro": "Zona Rural",
-    "preco": "600000",
+    "preco": 600000,
     "descricao": "Espaço com piscina, pomar, área verde e casa ampla.",
-    "imagem": "https://storage.widesys.com.br/objects/eyJidWNrZXQiOiJ3aWRlc3lzdzMyIiwia2V5IjoiaW1hZ2VzL3dpZGVzeXMvcHJvZHV0b3MvNWIyN2Y1MTlhN2RlYzQ5OTk5MDI3OWJiZTk1ZjIyODkuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImhlaWdodCI6Mzk2LCJmaXQiOiJjb3ZlciJ9LCJvdmVybGF5V2l0aCI6eyJidWNrZXQiOiJ3aWRlc3lzdzMyIiwia2V5IjoiaW1hZ2VzXC93YXRlcm1hcmsxNjUwOTczMzY0LnBuZyIsImFscGhhIjoiNzAiLCJ3UmF0aW8iOiIyMCIsImhSYXRpbyI6IjIwIiwib3B0aW9ucyI6eyJsZWZ0IjoiLTEwIiwidG9wIjoiLTEwIn19fX0="
+    "imagens": ["chacara_recreativa_1.webp", "chacara_recreativa_2.jpeg"],
+    "quartos": 4,
+    "banheiros": 3,
+    "garagem": 3
   },
   {
     "id": 4,
     "titulo": "Chácara Recreativa",
     "cidade": "Marmeleiro",
     "bairro": "Zona Rural",
-    "preco": "600000",
+    "preco": 600000,
     "descricao": "Espaço com piscina, pomar, área verde e casa ampla.",
-    "imagem": "https://storage.widesys.com.br/objects/eyJidWNrZXQiOiJ3aWRlc3lzdzMyIiwia2V5IjoiaW1hZ2VzL3dpZGVzeXMvcHJvZHV0b3MvNWIyN2Y1MTlhN2RlYzQ5OTk5MDI3OWJiZTk1ZjIyODkuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImhlaWdodCI6Mzk2LCJmaXQiOiJjb3ZlciJ9LCJvdmVybGF5V2l0aCI6eyJidWNrZXQiOiJ3aWRlc3lzdzMyIiwia2V5IjoiaW1hZ2VzXC93YXRlcm1hcmsxNjUwOTczMzY0LnBuZyIsImFscGhhIjoiNzAiLCJ3UmF0aW8iOiIyMCIsImhSYXRpbyI6IjIwIiwib3B0aW9ucyI6eyJsZWZ0IjoiLTEwIiwidG9wIjoiLTEwIn19fX0="
+    "imagens": ["chacara_recreativa_1.webp", "chacara_recreativa_2.jpeg"],
+    "quartos": 4,
+    "banheiros": 3,
+    "garagem": 3
   },
   {
     "id": 5,
     "titulo": "Chácara Recreativa",
     "cidade": "Marmeleiro",
     "bairro": "Zona Rural",
-    "preco": "600000",
+    "preco": 600000,
     "descricao": "Espaço com piscina, pomar, área verde e casa ampla.",
-    "imagem": "https://storage.widesys.com.br/objects/eyJidWNrZXQiOiJ3aWRlc3lzdzMyIiwia2V5IjoiaW1hZ2VzL3dpZGVzeXMvcHJvZHV0b3MvNWIyN2Y1MTlhN2RlYzQ5OTk5MDI3OWJiZTk1ZjIyODkuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImhlaWdodCI6Mzk2LCJmaXQiOiJjb3ZlciJ9LCJvdmVybGF5V2l0aCI6eyJidWNrZXQiOiJ3aWRlc3lzdzMyIiwia2V5IjoiaW1hZ2VzXC93YXRlcm1hcmsxNjUwOTczMzY0LnBuZyIsImFscGhhIjoiNzAiLCJ3UmF0aW8iOiIyMCIsImhSYXRpbyI6IjIwIiwib3B0aW9ucyI6eyJsZWZ0IjoiLTEwIiwidG9wIjoiLTEwIn19fX0="
+    "imagens": ["chacara_recreativa_1.webp", "chacara_recreativa_2.jpeg"],
+    "quartos": 4,
+    "banheiros": 3,
+    "garagem": 3
   },
   {
     "id": 6,
     "titulo": "Chácara Recreativa",
     "cidade": "Marmeleiro",
     "bairro": "Zona Rural",
-    "preco": "600000",
+    "preco": 600000,
     "descricao": "Espaço com piscina, pomar, área verde e casa ampla.",
-    "imagem": "https://storage.widesys.com.br/objects/eyJidWNrZXQiOiJ3aWRlc3lzdzMyIiwia2V5IjoiaW1hZ2VzL3dpZGVzeXMvcHJvZHV0b3MvNWIyN2Y1MTlhN2RlYzQ5OTk5MDI3OWJiZTk1ZjIyODkuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImhlaWdodCI6Mzk2LCJmaXQiOiJjb3ZlciJ9LCJvdmVybGF5V2l0aCI6eyJidWNrZXQiOiJ3aWRlc3lzdzMyIiwia2V5IjoiaW1hZ2VzXC93YXRlcm1hcmsxNjUwOTczMzY0LnBuZyIsImFscGhhIjoiNzAiLCJ3UmF0aW8iOiIyMCIsImhSYXRpbyI6IjIwIiwib3B0aW9ucyI6eyJsZWZ0IjoiLTEwIiwidG9wIjoiLTEwIn19fX0="
-  },
-  {
-    "id": 7,
-    "titulo": "Chácara Recreativa",
-    "cidade": "Marmeleiro",
-    "bairro": "Zona Rural",
-    "preco": "600000",
-    "descricao": "Espaço com piscina, pomar, área verde e casa ampla.",
-    "imagem": "https://storage.widesys.com.br/objects/eyJidWNrZXQiOiJ3aWRlc3lzdzMyIiwia2V5IjoiaW1hZ2VzL3dpZGVzeXMvcHJvZHV0b3MvNWIyN2Y1MTlhN2RlYzQ5OTk5MDI3OWJiZTk1ZjIyODkuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2MDAsImhlaWdodCI6Mzk2LCJmaXQiOiJjb3ZlciJ9LCJvdmVybGF5V2l0aCI6eyJidWNrZXQiOiJ3aWRlc3lzdzMyIiwia2V5IjoiaW1hZ2VzXC93YXRlcm1hcmsxNjUwOTczMzY0LnBuZyIsImFscGhhIjoiNzAiLCJ3UmF0aW8iOiIyMCIsImhSYXRpbyI6IjIwIiwib3B0aW9ucyI6eyJsZWZ0IjoiLTEwIiwidG9wIjoiLTEwIn19fX0="
+    "imagens": ["chacara_recreativa_1.webp", "chacara_recreativa_2.jpeg"],
+    "quartos": 4,
+    "banheiros": 3,
+    "garagem": 3
   }
 ]

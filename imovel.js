@@ -46,7 +46,7 @@ fetch("imoveis.json")
       .map(
         (url, idx) => `
       <div class="carousel-item ${idx === 0 ? "active" : ""}">
-        <img src="${url}" class="d-block w-100" alt="Foto ${idx + 1}">
+        <img src="public/${url}" class="d-block w-100" alt="Foto ${idx + 1}">
       </div>
     `
       )
