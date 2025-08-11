@@ -21,6 +21,7 @@ window.onload = async () => {
   const user = await auth0.getUser();
 
   const roles = user["https://sergiocorretor.app/claims/roles"] || [];
+  console.log("Usuário não é um administrador:", user);
 
   if (!roles.includes("admin")) {
     alert("Você não tem permissão para acessar esta página.");
