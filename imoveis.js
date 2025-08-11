@@ -1,5 +1,5 @@
 // Carregar imóveis na página de listagem
-fetch("imoveis.json")
+fetch("/data/casas.json")
   .then((res) => res.json())
   .then((imoveis) => {
     const lista = document.getElementById("lista-imoveis");
