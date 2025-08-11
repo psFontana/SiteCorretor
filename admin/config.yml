@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main   # altere se seu branch principal tiver outro nome
+  branch: main # ajuste se seu branch for diferente
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
@@ -14,13 +14,18 @@ collections:
         file: "data/casas.json"
         format: json
         fields:
-          - { name: "casas", label: "Casas", widget: "list", summary: "{{fields.titulo}} — {{fields.preco}}", fields:
+          - name: "casas"
+            label: "Casas"
+            widget: "list"
+            summary: "{{fields.titulo}} — R$ {{fields.preco}}"
+            fields:
               - { name: "id", label: "ID", widget: "string" }
               - { name: "titulo", label: "Título", widget: "string" }
               - { name: "preco", label: "Preço", widget: "number" }
               - { name: "endereco", label: "Endereço", widget: "string" }
               - { name: "descricao", label: "Descrição", widget: "text" }
-              - { name: "fotos", label: "Fotos", widget: "list", field:
-                  { name: "imagem", label: "Imagem", widget: "image" }
-                }
-            }
+              - name: "imagens"
+                label: "Imagens"
+                widget: "list"
+                fields:
+                  - { name: "imagem", label: "Imagem", widget: "image" }
