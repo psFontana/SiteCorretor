@@ -28,7 +28,9 @@ window.onload = async () => {
   // Verificando se o usuário é admin
   if (!roles.includes("admin")) {
     alert("Você não tem permissão para acessar esta página.");
-    window.location.href = "/";
+    await auth0.logout({
+      returnTo: window.location.origin, // Redireciona para a página inicial após o logout
+    });
     return; // Adicione um return aqui para evitar que o código continue executando
   }
 
