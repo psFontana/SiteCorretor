@@ -15,7 +15,7 @@ function gerarCard(imovel) {
   return `
     <div class="col-md-4">
       <div class="card h-100">
-        <img src="public/${imovel.imagens[0]}" class="card-img-top" alt="Imagem imóvel">
+        <img src="public/images/${imovel.imagens[0]}" class="card-img-top" alt="Imagem imóvel">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">${imovel.titulo}</h5>
           <p class="card-text">${imovel.cidade} - ${imovel.bairro}</p>
