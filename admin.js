@@ -31,7 +31,7 @@ window.onload = async () => {
   }
 
   // Carregar imóveis
-  fetch("../imoveis.json")
+  fetch("./public/imoveis.json")
     .then((res) => res.json())
     .then((imoveis) => {
       const lista = document.getElementById("lista-imoveis");
@@ -55,7 +55,7 @@ window.onload = async () => {
                 .map(
                   (img, index) => `
                 <div class="carousel-item ${index === 0 ? "active" : ""}">
-                  <img src="../public/${img}" class="d-block w-100" alt="Imagem imóvel">
+                  <img src="./public/images/${img}" class="d-block w-100" alt="Imagem imóvel">
                 </div>
               `
                 )
