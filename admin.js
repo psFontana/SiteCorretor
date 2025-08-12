@@ -104,3 +104,37 @@ window.onload = async () => {
     // Lógica para deletar imóvel
   };
 };
+function onlyAdmin(req, res, next) {
+  const roles =
+    req.auth.payload["https://sergiocorretor.app/claims/roles"] || [];
+  if (!roles.includes("admin")) {
+    return res.status(403).json({ error: "Acesso negado" });
+  }
+  next();
+}
+
+// Exemplo: só admin pode deletar
+app.delete("/imoveis/:id", onlyAdmin, async (req, res) => {
+  /* ... */
+});
+
+// pega o token JWT para autorizar a chamada
+const token = await auth0.getTokenSilently();
+
+// Exemplo: buscar imóveis
+const res = await fetch("/api/imoveis", {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+});
+const imoveis = await res.json();
+
+// Para criar, atualizar, deletar, basta usar POST/PUT/DELETE
+await fetch("/api/imoveis", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
+  },
+  body: JSON.stringify(novoImovel),
+});
