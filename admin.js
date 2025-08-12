@@ -22,7 +22,7 @@ window.onload = async () => {
   console.log(user);
 
   // Verificando se o usuário é admin
-  if (!user.admin && user.admin === true) {
+  if (!user.admin === true) {
     alert("Você não tem permissão para acessar esta página.");
     window.location.href = "/";
     return;
