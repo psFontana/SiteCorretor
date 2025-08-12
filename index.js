@@ -1,3 +1,6 @@
+import { db } from "./firebase-config.js";
+import { collection, getDocs } from "firebase/firestore";
+
 let fullpageInstance = null;
 const mobileBreakpoint = 768;
 
@@ -112,10 +115,18 @@ function smoothScrollHandler(e) {
 document.addEventListener("DOMContentLoaded", () => {
   handleFullPageLoad();
 
-  fetch("public/imoveis.json")
-    .then((res) => res.json())
-    .then((imoveis) => {
+  // Função assíncrona para buscar os imóveis do Firestore
+  async function carregarImoveisDoFirestore() {
+    try {
+      const imoveisCollection = collection(db, "imoveis");
+      const imoveisSnapshot = await getDocs(imoveisCollection);
+      const imoveis = imoveisSnapshot.docs.map((doc) => doc.data());
+
       const carousel = document.getElementById("carousel-content");
+      if (!carousel) return;
+
+      carousel.innerHTML = ""; // Limpa o carrossel antes de popular
+
       imoveis.forEach((imovel, i) => {
         const item = `
           <div class="carousel-item ${i === 0 ? "active" : ""}">
@@ -125,7 +136,12 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>`;
         carousel.innerHTML += item;
       });
-    });
+    } catch (error) {
+      console.error("Erro ao buscar imóveis do Firestore:", error);
+    }
+  }
+
+  carregarImoveisDoFirestore();
 });
 
 let resizeTimeout;
