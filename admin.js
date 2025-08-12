@@ -19,23 +19,20 @@ window.onload = async () => {
   }
 
   const user = await auth0.getUser();
-
-  // Acessando a claim de roles
-  const roles = user["https://sergiocorretor.app/claims/roles"] || [];
-  console.log(roles);
   console.log(user);
 
   // Verificando se o usuário é admin
-  if (!roles.includes("admin")) {
+  if (!(user.admin && user.email_verified)) {
     alert("Você não tem permissão para acessar esta página.");
     await auth0.logout({
       returnTo: window.location.origin, // Redireciona para a página inicial após o logout
     });
-    return; // Adicione um return aqui para evitar que o código continue executando
+    // window.location.href = "/";
+    return;
   }
 
   // Carregar imóveis
-  fetch("imoveis.json")
+  fetch("../imoveis.json")
     .then((res) => res.json())
     .then((imoveis) => {
       const lista = document.getElementById("lista-imoveis");
