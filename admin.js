@@ -23,6 +23,7 @@ window.onload = async () => {
   const roles = user["https://sergiocorretor.app/claims/roles"] || [];
   console.log(roles);
   console.log(user["https://sergiocorretor.app/claims/roles"]);
+  console.log(user);
 
   if (!roles.includes("admin")) {
     alert("Você não tem permissão para acessar esta página.");
