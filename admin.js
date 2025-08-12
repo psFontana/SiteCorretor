@@ -1,7 +1,7 @@
 window.onload = async () => {
   const auth0 = await createAuth0Client({
-    client_id: process.env.AUTH0_CLIENT_ID,
-    domain: process.env.AUTH0_DOMAIN,
+    domain: "dev-cbwsq4qtummqvn4c.us.auth0.com",
+    client_id: "rPs2U7DJJNYYRh0IGUypS97fqL1XBUWi",
     redirect_uri: "https://sergiocorretor.netlify.app/admin.html",
   });
 
@@ -104,24 +104,3 @@ window.onload = async () => {
     // Lógica para deletar imóvel
   };
 };
-
-// pega o token JWT para autorizar a chamada
-const token = await auth0.getTokenSilently();
-
-// Exemplo: buscar imóveis
-const res = await fetch("/api/crud", {
-  headers: {
-    Authorization: `Bearer ${token}`,
-  },
-});
-const crud = await res.json();
-
-// Para criar, atualizar, deletar, basta usar POST/PUT/DELETE
-await fetch("/api/crud", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`,
-  },
-  body: JSON.stringify(novoImovel),
-});
