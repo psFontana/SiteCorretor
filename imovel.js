@@ -13,7 +13,7 @@ if (!detalhesEl || !loadingEl) {
   console.error("Não encontrou #detalhes-imovel ou #loading no DOM");
 }
 
-fetch("imoveis.json")
+fetch("public/imoveis.json")
   .then((res) => {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();
@@ -35,18 +35,16 @@ fetch("imoveis.json")
     }
 
     // Garante sempre um array de imagens
-    const imagens = Array.isArray(imovel.imagens)
-      ? imovel.imagens
-      : imovel.imagem
-      ? [imovel.imagem]
-      : [];
+    const imagens = imovel.imagens || [];
 
     // Monta itens do carousel
     const itensCarousel = imagens
       .map(
         (url, idx) => `
       <div class="carousel-item ${idx === 0 ? "active" : ""}">
-        <img src="public/${url}" class="d-block w-100" alt="Foto ${idx + 1}">
+        <img src="public/images/${url}" class="d-block w-100" alt="Foto ${
+          idx + 1
+        }">
       </div>
     `
       )

@@ -112,16 +112,16 @@ function smoothScrollHandler(e) {
 document.addEventListener("DOMContentLoaded", () => {
   handleFullPageLoad();
 
-  fetch("imoveis.json")
+  fetch("public/imoveis.json")
     .then((res) => res.json())
     .then((imoveis) => {
       const carousel = document.getElementById("carousel-content");
       imoveis.forEach((imovel, i) => {
         const item = `
           <div class="carousel-item ${i === 0 ? "active" : ""}">
-            <img src="public/${imovel.imagens[0]}" class="d-block" alt="${
-          imovel.titulo
-        }">
+            <img src="public/images/${
+              imovel.imagens[0]
+            }" class="d-block" alt="${imovel.titulo}">
           </div>`;
         carousel.innerHTML += item;
       });
