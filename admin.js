@@ -2,7 +2,6 @@ window.onload = async () => {
   const auth0 = await createAuth0Client({
     domain: "dev-cbwsq4qtummqvn4c.us.auth0.com",
     client_id: "rPs2U7DJJNYYRh0IGUypS97fqL1XBUWi",
-    redirect_uri: "https://sergiocorretor.netlify.app/admin.html",
   });
 
   const query = window.location.search;
