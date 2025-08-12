@@ -1,8 +1,19 @@
-import { db } from "./firebase-config.js";
-import { collection, getDocs } from "firebase/firestore";
-
 let fullpageInstance = null;
 const mobileBreakpoint = 768;
+
+// Suas chaves de configuração do Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyBY6AlwA6Zwk3jyvVpaZQ9jhWD6rO8JqTU",
+  authDomain: "corretor-d85aa.firebaseapp.com",
+  projectId: "corretor-d85aa",
+  storageBucket: "corretor-d85aa.appspot.com",
+  messagingSenderId: "463637040600",
+  appId: "1:463637040600:web:9bb54b4c3d481a33e9f6ad",
+};
+
+// Inicializa o Firebase APENAS UMA VEZ
+const app = firebase.initializeApp(firebaseConfig);
+const db = app.firestore();
 
 function handleFullPageLoad() {
   if (window.innerWidth > mobileBreakpoint) {
@@ -23,7 +34,7 @@ function handleFullPageLoad() {
           recordHistory: true,
           controlArrows: true,
           lazyLoading: false,
-
+          licenseKey: "GPLv3_License", // Você precisará obter sua própria chave de licença
           onLeave(origin, destination) {
             // Animar elementos que estão saindo
             if (origin.anchor === "home") {
@@ -34,7 +45,6 @@ function handleFullPageLoad() {
               animateOut("#sobre-imagem", -innerWidth / 2);
               animateOut("#sobre-texto", innerWidth / 2);
             }
-
             // Animar elementos que estão entrando
             if (destination.anchor === "home") {
               animateIn("#carouselExample", -innerWidth / 2);
@@ -46,7 +56,6 @@ function handleFullPageLoad() {
             }
           },
         });
-
         // Reanexa os eventos do menu
       };
       document.head.appendChild(script);
@@ -55,7 +64,6 @@ function handleFullPageLoad() {
     if (fullpageInstance) {
       fullpageInstance.destroy("all");
       fullpageInstance = null;
-
       // Smooth scroll para mobile
       document
         .querySelectorAll('a[href*="#"]:not([href="#"])')
@@ -118,14 +126,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Função assíncrona para buscar os imóveis do Firestore
   async function carregarImoveisDoFirestore() {
     try {
-      const imoveisCollection = collection(db, "imoveis");
-      const imoveisSnapshot = await getDocs(imoveisCollection);
+      const imoveisCollection = db.collection("imoveis");
+      const imoveisSnapshot = await imoveisCollection.get();
       const imoveis = imoveisSnapshot.docs.map((doc) => doc.data());
 
       const carousel = document.getElementById("carousel-content");
       if (!carousel) return;
 
-      carousel.innerHTML = ""; // Limpa o carrossel antes de popular
+      carousel.innerHTML = "";
 
       imoveis.forEach((imovel, i) => {
         const item = `
