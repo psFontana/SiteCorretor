@@ -19,14 +19,10 @@ window.onload = async () => {
   }
 
   const user = await auth0.getUser();
-
-  // Acessando a claim de roles
-  const roles = user["https://sergiocorretor.app/claims/roles"] || [];
-  console.log(roles);
   console.log(user);
 
   // Verificando se o usuário é admin
-  if (!roles.includes("admin")) {
+  if (!user.admin && user.admin === true) {
     alert("Você não tem permissão para acessar esta página.");
     window.location.href = "/";
     return;
