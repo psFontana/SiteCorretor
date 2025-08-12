@@ -119,7 +119,9 @@ document.addEventListener("DOMContentLoaded", () => {
       imoveis.forEach((imovel, i) => {
         const item = `
           <div class="carousel-item ${i === 0 ? "active" : ""}">
-            <img src="${imovel.imagem}" class="d-block" alt="${imovel.titulo}">
+            <img src="public/${imovel.imagens[0]}" class="d-block" alt="${
+          imovel.titulo
+        }">
           </div>`;
         carousel.innerHTML += item;
       });
