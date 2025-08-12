@@ -20,14 +20,16 @@ window.onload = async () => {
 
   const user = await auth0.getUser();
 
+  // Acessando a claim de roles
   const roles = user["https://sergiocorretor.app/claims/roles"] || [];
   console.log(roles);
-  console.log(user["https://sergiocorretor.app/claims/roles"]);
   console.log(user);
 
+  // Verificando se o usuário é admin
   if (!roles.includes("admin")) {
     alert("Você não tem permissão para acessar esta página.");
     window.location.href = "/";
+    return;
   }
 
   // Carregar imóveis
