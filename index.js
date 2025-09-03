@@ -1,20 +1,6 @@
 let fullpageInstance = null;
 const mobileBreakpoint = 768;
 
-// Suas chaves de configuração do Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyBY6AlwA6Zwk3jyvVpaZQ9jhWD6rO8JqTU",
-  authDomain: "corretor-d85aa.firebaseapp.com",
-  projectId: "corretor-d85aa",
-  storageBucket: "corretor-d85aa.appspot.com",
-  messagingSenderId: "463637040600",
-  appId: "1:463637040600:web:9bb54b4c3d481a33e9f6ad",
-};
-
-// Inicializa o Firebase APENAS UMA VEZ
-const app = firebase.initializeApp(firebaseConfig);
-const db = app.firestore();
-
 function handleFullPageLoad() {
   if (window.innerWidth > mobileBreakpoint) {
     if (!fullpageInstance) {
@@ -31,10 +17,10 @@ function handleFullPageLoad() {
           loopHorizontal: false,
           continuousVertical: true,
           scrollOverflow: false,
-          recordHistory: true,
-          controlArrows: true,
+          recordHistory: false,
+          controlArrows: false,
           lazyLoading: false,
-          licenseKey: "GPLv3_License", // Você precisará obter sua própria chave de licença
+
           onLeave(origin, destination) {
             // Animar elementos que estão saindo
             if (origin.anchor === "home") {
@@ -45,6 +31,7 @@ function handleFullPageLoad() {
               animateOut("#sobre-imagem", -innerWidth / 2);
               animateOut("#sobre-texto", innerWidth / 2);
             }
+
             // Animar elementos que estão entrando
             if (destination.anchor === "home") {
               animateIn("#carouselExample", -innerWidth / 2);
@@ -56,7 +43,12 @@ function handleFullPageLoad() {
             }
           },
         });
+
         // Reanexa os eventos do menu
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+          link.removeEventListener("click", navLinkHandler);
+          link.addEventListener("click", navLinkHandler);
+        });
       };
       document.head.appendChild(script);
     }
@@ -64,6 +56,7 @@ function handleFullPageLoad() {
     if (fullpageInstance) {
       fullpageInstance.destroy("all");
       fullpageInstance = null;
+
       // Smooth scroll para mobile
       document
         .querySelectorAll('a[href*="#"]:not([href="#"])')
@@ -123,18 +116,10 @@ function smoothScrollHandler(e) {
 document.addEventListener("DOMContentLoaded", () => {
   handleFullPageLoad();
 
-  // Função assíncrona para buscar os imóveis do Firestore
-  async function carregarImoveisDoFirestore() {
-    try {
-      const imoveisCollection = db.collection("imoveis");
-      const imoveisSnapshot = await imoveisCollection.get();
-      const imoveis = imoveisSnapshot.docs.map((doc) => doc.data());
-
+  fetch("public/imoveis.json")
+    .then((res) => res.json())
+    .then((imoveis) => {
       const carousel = document.getElementById("carousel-content");
-      if (!carousel) return;
-
-      carousel.innerHTML = "";
-
       imoveis.forEach((imovel, i) => {
         const item = `
           <div class="carousel-item ${i === 0 ? "active" : ""}">
@@ -144,12 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>`;
         carousel.innerHTML += item;
       });
-    } catch (error) {
-      console.error("Erro ao buscar imóveis do Firestore:", error);
-    }
-  }
-
-  carregarImoveisDoFirestore();
+    });
 });
 
 let resizeTimeout;
