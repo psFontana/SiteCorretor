@@ -1,20 +1,5 @@
 [
   {
-    "id": 1,
-    "titulo": "Casa no Centro",
-    "cidade": "Francisco Beltrão",
-    "bairro": "Centro",
-    "preco": 450000,
-    "descricao": "Casa com 3 quartos, garagem, sala ampla e área de lazer.",
-    "imagens": [
-      "casa_centro_1.jpeg",
-      "casa_centro_2.png"
-    ],
-    "quartos": 3,
-    "banheiros": 2,
-    "garagem": 2
-  },
-  {
     "id": 2,
     "titulo": "Apartamento Jardim Europa",
     "cidade": "Francisco Beltrão",
