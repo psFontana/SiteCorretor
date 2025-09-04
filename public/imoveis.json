@@ -6,7 +6,10 @@
     "bairro": "Centro",
     "preco": 450000,
     "descricao": "Casa com 3 quartos, garagem, sala ampla e área de lazer.",
-    "imagens": ["casa_centro_1.jpeg", "casa_centro_2.png"],
+    "imagens": [
+      "casa_centro_1.jpeg",
+      "casa_centro_2.png"
+    ],
     "quartos": 3,
     "banheiros": 2,
     "garagem": 2
@@ -27,51 +30,30 @@
     "garagem": 0
   },
   {
-    "id": 3,
     "titulo": "Chácara Recreativa",
+    "tipo": "",
     "cidade": "Marmeleiro",
     "bairro": "Zona Rural",
     "preco": 600000,
     "descricao": "Espaço com piscina, pomar, área verde e casa ampla.",
-    "imagens": ["chacara_recreativa_1.webp", "chacara_recreativa_2.jpeg"],
+    "imagens": [
+      "chacara_recreativa_1.webp",
+      "chacara_recreativa_2.jpeg"
+    ],
+    "area_terreno": 0,
+    "area_construida": 0,
+    "suite": 0,
     "quartos": 4,
     "banheiros": 3,
-    "garagem": 3
-  },
-  {
-    "id": 4,
-    "titulo": "Chácara Recreativa",
-    "cidade": "Marmeleiro",
-    "bairro": "Zona Rural",
-    "preco": 600000,
-    "descricao": "Espaço com piscina, pomar, área verde e casa ampla.",
-    "imagens": ["chacara_recreativa_1.webp", "chacara_recreativa_2.jpeg"],
-    "quartos": 4,
-    "banheiros": 3,
-    "garagem": 3
-  },
-  {
-    "id": 5,
-    "titulo": "Chácara Recreativa",
-    "cidade": "Marmeleiro",
-    "bairro": "Zona Rural",
-    "preco": 600000,
-    "descricao": "Espaço com piscina, pomar, área verde e casa ampla.",
-    "imagens": ["chacara_recreativa_1.webp", "chacara_recreativa_2.jpeg"],
-    "quartos": 4,
-    "banheiros": 3,
-    "garagem": 3
-  },
-  {
-    "id": 6,
-    "titulo": "Chácara Recreativa",
-    "cidade": "Marmeleiro",
-    "bairro": "Zona Rural",
-    "preco": 600000,
-    "descricao": "Espaço com piscina, pomar, área verde e casa ampla.",
-    "imagens": ["chacara_recreativa_1.webp", "chacara_recreativa_2.jpeg"],
-    "quartos": 4,
-    "banheiros": 3,
-    "garagem": 3
+    "cozinha": 0,
+    "lavanderia": 0,
+    "sacada": 0,
+    "varanda": 0,
+    "portao_eletronico": 0,
+    "garagem": 3,
+    "piscina": 10,
+    "terreno_frente": 0,
+    "terreno_fundos": 0,
+    "id": 6
   }
 ]
